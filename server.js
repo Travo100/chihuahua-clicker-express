@@ -1,7 +1,32 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const app = express();
+
+const db = require("./models");
+
+// Configure body parser for AJAX requests
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/chihuahuaDB");
+
+app.post("/api/chihuahuas", (req, res) => {
+  db.Chihuahua
+    .create(req.body)
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+});
+
+app.get("/api/chihuahuas", (req, res) => {
+  db.Chihuahua
+    .find({})
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+});
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
