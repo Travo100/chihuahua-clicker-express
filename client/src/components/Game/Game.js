@@ -27,7 +27,6 @@ class Game extends Component {
   }
 
   cardClickedOn = (id) => {
-    console.log(id);
     if(id === this.state.selectedChihuahuaId) {
       let random = Math.floor(Math.random() * 6);
       this.setState({
@@ -42,7 +41,6 @@ class Game extends Component {
     }
   };
 
-  
   render() {
     return (
       <div className="container">
