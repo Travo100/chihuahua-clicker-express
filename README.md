@@ -1,3 +1,11 @@
+# Materials regarding the chihuahua-clicker-express 
+
+GitHub: https://github.com/Travo100/chihuahua-clicker-express
+
+Deployed Site: https://chihuahua-clicker-express.herokuapp.com/
+
+Video: https://s3-us-west-2.amazonaws.com/extended-sessions-cbc/march-2018-ft/20-react/GMT20180512-200512_Bootcamp-E_1920x1080.mp4
+
 # Create React Express App
 
 ## About This Boilerplate
