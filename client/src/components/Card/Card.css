@@ -1,7 +1,15 @@
 .chi-card {
     height: 200px;
+    width: 200px;
     background-size: cover;
     text-align: center;
-    font-size: 32px;
-    color: white;
+    font-size: 16px;
+    padding: 16px;
+    color:  #fff;
+    text-shadow: 0 0 1px #000;
+    margin: 0 auto 20px;
+}
+
+.chi-card:hover {
+    cursor: pointer;
 }
