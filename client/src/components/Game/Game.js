@@ -13,11 +13,13 @@ class Game extends Component {
     selectedChihuahuaId: ""
   }
 
+  getRandomIndex = myArray => Math.floor(Math.random() * myArray.length);
+
   componentDidMount() {
     API
       .getChihuahuas()
       .then(res => {
-        let random = Math.floor(Math.random() * 6);
+        let random = this.getRandomIndex(res.data);
         this.setState({
           randomNumber: random,
           chihuahuas: res.data,
@@ -28,7 +30,7 @@ class Game extends Component {
 
   cardClickedOn = (id) => {
     if(id === this.state.selectedChihuahuaId) {
-      let random = Math.floor(Math.random() * 6);
+      let random = this.getRandomIndex(this.state.chihuahuas);
       this.setState({
         score: this.state.score + 1,
         randomNumber: random,
